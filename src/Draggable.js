@@ -2,7 +2,8 @@
 
   var document = global.document;
   var defaults = {
-    dom: null
+    dom: null,
+    parent: document
   };
 
   nx.declare('nx.ui.Draggable', {
@@ -34,6 +35,20 @@
         var evt = inEvent.changedTouches;
         return evt[0];
       },
+      dragstart: function () {
+        //template method:
+      },
+      drag: function (event) {
+        var offset = this._offset;
+        var dom = this.options.dom;
+        nx.mix(dom.style, {
+          left: event.pageX - offset.x + 'px',
+          top: event.pageY - offset.y + 'px'
+        })
+      },
+      dragend: function () {
+        //template method:
+      },
       _start: function (inEvent) {
         var event = this.event(inEvent);
         var options = this.options;
@@ -41,16 +56,23 @@
           x: event.pageX - options.dom.offsetLeft,
           y: event.pageY - options.dom.offsetTop
         };
+        this.dragstart(event);
         this.fire('dragstart');
       },
-      _move: function () {
+      _move: function (inEvent) {
+        var event = this.event(inEvent);
         if (this._offset) {
+          this.drag(event);
           this.fire('drag');
         }
       },
-      _end: function () {
-        this._offset = null;
-        this.fire('dragend');
+      _end: function (inEvent) {
+        var event = this.event(inEvent);
+        if (this._offset) {
+          this._offset = null;
+          this.dragend(event);
+          this.fire('dragend');
+        }
       }
     }
   });
