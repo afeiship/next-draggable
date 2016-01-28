@@ -1,7 +1,7 @@
 #next-net-ajax
 
 ##description:
-+ Ajax mini library based on next toolkit.
++ Draggable simulate by touch event based on next toolkit.
 
 ##usage:
 + get instance:
