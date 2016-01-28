@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="../bower_components/next-js-core/dest/nx.core.js"></script>
+  <script type="text/javascript" src="../bower_components/next-dom-qsa/dist/QuerySelector.js"></script>
+  <script type="text/javascript" src="../src/Draggable.js"></script>
+  <style type="text/css">
+    #drag1{
+      width:100px;
+      height:100px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div id="drag1"></div>
+
+<script type="text/javascript">
+  var dom=nx.$('#drag1');
+  var instance=new nx.ui.Draggable({
+    dom:dom[0]
+  });
+
+  instance.on('dragstart',function(){
+    console.log('dragstart!!!');
+  });
+
+  instance.on('drag',function(){
+    console.log('move!!!');
+  });
+
+  instance.on('dragend',function(){
+    console.log('dragend!!!');
+  });
+
+</script>
+
+</body>
+</html>
