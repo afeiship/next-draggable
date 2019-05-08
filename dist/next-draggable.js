@@ -22,9 +22,6 @@
       attachEvents: function() {
         var el = this.element;
         var doc = global.document;
-        console.log('TOUCH_START', NxTouchEvents.TOUCH_START);
-        console.log('TOUCH_MOVE', NxTouchEvents.TOUCH_MOVE);
-        console.log('TOUCH_END', NxTouchEvents.TOUCH_END);
         this._startRes = NxDomEvent.on(el, NxTouchEvents.TOUCH_START, this._onStart.bind(this));
         this._moveRes = NxDomEvent.on(doc, NxTouchEvents.TOUCH_MOVE, this._onMove.bind(this));
         this._endRes = NxDomEvent.on(doc, NxTouchEvents.TOUCH_END, this._onEnd.bind(this));
