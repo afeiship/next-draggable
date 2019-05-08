@@ -25,6 +25,3 @@ new NxDraggable(element, {
   }
 })
 ```
-
-## resources
-- https://github.com/afeiship
