@@ -6,16 +6,24 @@
 npm install -S afeiship/next-draggable --registry=https://registry.npm.taobao.org
 ```
 
-## apis
-| api | params | description   |
-|-----|--------|---------------|
-| get | -      | desc balabala |
-
 ## usage
 ```js
 import NxDraggable from 'next-draggable';
 
 // code goes here:
+new NxDraggable(element, {
+  onChange: function(inEvent){
+    const { type, value } = inEvent;
+    switch(type){
+      case 'dragstart':
+      break;
+      case 'drag':
+      break;
+      case 'dragend':
+      break;
+    }
+  }
+})
 ```
 
 ## resources
