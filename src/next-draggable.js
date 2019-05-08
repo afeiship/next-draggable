@@ -36,8 +36,8 @@
       change: function(inType, inEvent) {
         var event = this.event(inEvent);
         this.options.onChange({
+          type: inType,
           target: {
-            type: inType,
             value: {
               x: event.clientX - this._offset.x,
               y: event.clientY - this._offset.y
