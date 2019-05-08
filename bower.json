@@ -1,30 +1,26 @@
 {
-  "name": "next-ui-draggable",
-  "homepage": "https://github.com/afeiship/next-ui-draggable",
+  "name": "next-draggable",
+  "description": "Draggable simulate by touch event based on next toolkit",
+  "main": "dist/next-draggable.js",
   "authors": [
     "afei"
   ],
-  "description": "Draggable simulate by touch event based on next toolkit.",
-  "main": "dist/Draggable.js",
-  "moduleType": [
-    "node"
-  ],
+  "license": "MIT",
   "keywords": [
-    "draggable",
     "next"
   ],
-  "license": "MIT",
+  "homepage": "https://github.com/afeiship/next-draggable",
+  "moduleType": [
+    "amd"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
-  ],
-  "devDependencies": {
-    "next-js-core": "*"
-  },
-  "dependencies": {
-    "next-dom-qsa": "*"
-  }
+    "tests",
+    "src",
+    "build",
+    "gulpfile.js"
+  ]
 }
