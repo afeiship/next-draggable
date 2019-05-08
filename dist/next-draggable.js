@@ -10,9 +10,7 @@
   var nx = global.nx || require('next-js-core2');
   var NxDomEvent = nx.dom ? nx.dom.Event : require('next-dom-event');
   var NxTouchEvents = nx.TouchEvents || require('next-touch-events');
-  var DEFAULT_OPTIONS = {
-    onChange: nx.noop
-  };
+  var DEFAULT_OPTIONS = { onChange: nx.noop };
 
   var NxDraggable = nx.declare('nx.Draggable', {
     methods: {
