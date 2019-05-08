@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Draggable</title>
+    <style>
+      #handle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border:1px solid #f00;
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/next-js-core2/dist/next-js-core2.js"></script>
+    <script src="/next-dom-event/dist/next-dom-event.js"></script>
+    <script src="/next-touch-events/dist/next-touch-events.js"></script>
+    <script src="/next-draggable.js"></script>
+    <button id="handle">DRAG</button>
+
+    <script>
+      var element = document.getElementById('handle');
+      var instance = new nx.Draggable(element, {
+        onChange: function(inEvent) {
+          // console.log(inEvent.target.type, inEvent.target.value);
+          element.style.left = inEvent.target.value.x + 'px';
+          element.style.top = inEvent.target.value.y + 'px';
+        }
+      });
+    </script>
+  </body>
+</html>

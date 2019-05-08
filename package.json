@@ -10,12 +10,14 @@
   "scripts": {
     "build": "gulp",
     "test": "jest",
+    "start": "node server.js",
     "version": "gulp bump"
   },
   "main": "dist/next-draggable.js",
   "license": "MIT",
   "devDependencies": {
     "del": "^2.2.1",
+    "express": "^4.16.4",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.7.0",
     "gulp-concat": "^2.6.0",
@@ -30,6 +32,8 @@
     "yargs": "^4.7.1"
   },
   "dependencies": {
-    "next-js-core2": "github:afeiship/next-js-core2"
+    "next-dom-event": "github:afeiship/next-dom-event",
+    "next-js-core2": "github:afeiship/next-js-core2",
+    "next-touch-events": "github:afeiship/next-touch-events"
   }
 }

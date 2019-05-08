@@ -1,3 +1,10 @@
+/*!
+ * name: next-draggable
+ * url: https://github.com/afeiship/next-draggable
+ * version: 1.0.0
+ * license: MIT
+ */
+
 (function() {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
