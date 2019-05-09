@@ -6,12 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Draggable</title>
     <style>
-      #handle {
+      #handle,
+      #handle2 {
         position: absolute;
         width: 100px;
         height: 100px;
-        border:1px solid #f00;
+        border: 1px solid #f00;
         background: #eee;
+      }
+
+      #handle2 {
+        border: 1px solid #00f;
+        left: 200px;
+        top: 200px;
       }
     </style>
   </head>
@@ -21,14 +28,24 @@
     <script src="/next-touch-events/dist/next-touch-events.js"></script>
     <script src="/next-draggable.js"></script>
     <button id="handle">DRAG</button>
+    <button id="handle2">DRAG2</button>
 
     <script>
       var element = document.getElementById('handle');
+      var element2 = document.getElementById('handle2');
       var instance = new nx.Draggable(element, {
         onChange: function(inEvent) {
           // console.log(inEvent.target.type, inEvent.target.value);
           element.style.left = inEvent.target.value.x + 'px';
           element.style.top = inEvent.target.value.y + 'px';
+        }
+      });
+
+      var instance2 = new nx.Draggable(element2, {
+        onChange: function(inEvent) {
+          // console.log(inEvent.target.type, inEvent.target.value);
+          element2.style.left = inEvent.target.value.x + 'px';
+          element2.style.top = inEvent.target.value.y + 'px';
         }
       });
     </script>
