@@ -39,8 +39,8 @@
       var instance = new nx.Draggable(element, {
         onChange: function(inEvent) {
           console.log('el1:', inEvent.target.type, inEvent.target.value);
-          // element.style.left = inEvent.target.value.x + 'px';
-          // element.style.top = inEvent.target.value.y + 'px';
+          element.style.left = inEvent.target.value.x + 'px';
+          element.style.top = inEvent.target.value.y + 'px';
         }
       });
 
@@ -48,8 +48,8 @@
         onChange: function(inEvent) {
           // debugger
           console.log('el2:', inEvent.target.type, inEvent.target.value);
-          // element2.style.left = inEvent.target.value.x + 'px';
-          // element2.style.top = inEvent.target.value.y + 'px';
+          element2.style.left = inEvent.target.value.x + 'px';
+          element2.style.top = inEvent.target.value.y + 'px';
         }
       });
     </script>
