@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Draggable</title>
     <style>
-      #handle,
-      #handle2 {
+      #handle {
         position: absolute;
         width: 100px;
         height: 100px;
@@ -16,6 +15,10 @@
       }
 
       #handle2 {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: #eee;
         border: 1px solid #00f;
         left: 200px;
         top: 200px;
@@ -35,17 +38,18 @@
       var element2 = document.getElementById('handle2');
       var instance = new nx.Draggable(element, {
         onChange: function(inEvent) {
-          // console.log(inEvent.target.type, inEvent.target.value);
-          element.style.left = inEvent.target.value.x + 'px';
-          element.style.top = inEvent.target.value.y + 'px';
+          console.log('el1:', inEvent.target.type, inEvent.target.value);
+          // element.style.left = inEvent.target.value.x + 'px';
+          // element.style.top = inEvent.target.value.y + 'px';
         }
       });
 
       var instance2 = new nx.Draggable(element2, {
         onChange: function(inEvent) {
-          // console.log(inEvent.target.type, inEvent.target.value);
-          element2.style.left = inEvent.target.value.x + 'px';
-          element2.style.top = inEvent.target.value.y + 'px';
+          // debugger
+          console.log('el2:', inEvent.target.type, inEvent.target.value);
+          // element2.style.left = inEvent.target.value.x + 'px';
+          // element2.style.top = inEvent.target.value.y + 'px';
         }
       });
     </script>

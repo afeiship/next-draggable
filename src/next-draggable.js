@@ -3,13 +3,13 @@
   var nx = global.nx || require('next-js-core2');
   var NxDomEvent = nx.dom ? nx.dom.Event : require('next-dom-event');
   var NxTouchEvents = nx.TouchEvents || require('next-touch-events');
-  var DEFAULT_OPTIONS = { onChange: nx.noop };
 
   var NxDraggable = nx.declare('nx.Draggable', {
     methods: {
       init: function(inElement, inOptions) {
         this.element = inElement;
-        this.options = nx.mix(DEFAULT_OPTIONS, inOptions);
+        this.options = nx.mix({ onChange: nx.noop }, inOptions);
+        this._offset = null;
         this.attachEvents();
       },
       attachEvents: function() {
@@ -25,8 +25,9 @@
         this._endRes.destroy();
       },
       event: function(inEvent) {
-        if (inEvent.touches && inEvent.touches.length > 0) {
-          var event = inEvent.touches[0];
+        var touches = inEvent.touches;
+        if (touches && touches.length > 0) {
+          var event = touches[0];
           event.offsetX = event.clientX - event.target.offsetLeft;
           event.offsetY = event.clientY - event.target.offsetTop;
           return event;
